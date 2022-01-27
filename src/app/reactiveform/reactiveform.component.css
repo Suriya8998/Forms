@@ -1,0 +1,19 @@
+
+input.ng-invalid{
+    border-left: 5px solid red;
+}
+input.ng-valid{
+    border-left: 5px solid green;
+}
+.error{
+    color: red;
+}
+.container{
+    text-align: -webkit-center;
+    width: 567px;
+    background-color: aqua;
+    width: 567px;
+}
+.form-control{
+    width: 211px;
+}

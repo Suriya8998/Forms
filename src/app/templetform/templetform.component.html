@@ -1,0 +1,129 @@
+
+
+<div class="container" >
+    <form  class="aaa"  #userForm="ngForm" (ngSubmit)="onSubmit(userForm.value)">
+
+      <div class="form-group">
+        
+    <h1 class="xyz">Template Driven Form</h1>
+        <label for="email">Email:</label>
+        <span class="text text-danger" *ngIf="email.untouched&&email.invalid"> *</span>
+        <input type="email" required  ngModel  #email="ngModel" class="form-control" placeholder="Enter email" name="email" autocomplete="on">
+        <span class="text text-danger" *ngIf="email.touched && email.invalid"> Email id Requried </span>
+        <span class="text text-success" *ngIf="email.valid"> sucess....!</span>
+        
+    </div>
+
+      <div class="form-group">
+        <label for="pwd">Password:</label>
+        <span class="text text-danger" *ngIf="email.untouched&&email.invalid"> *</span>
+        <input type="password" ngModel #pswd="ngModel"  required class="form-control"  placeholder="Enter password" name="pswd"     maxlength="8" minlength="8">
+
+      
+   
+        <div   *ngIf=" pswd.invalid && pswd.touched" class="invalid-feedback">  
+
+   
+  
+        <div   *ngIf=" pswd.errors?.['minlength']"></div>password must  be 6 character</div>  
+ 
+        <span class="text text-danger" *ngIf="pswd.touched && pswd.invalid"> password id Requried </span>
+        <span class="text text-success" *ngIf="pswd.valid"> sucess....!</span>
+    
+     
+        <div class="form-row">
+          <div>
+            <label for="firstName">First name</label>
+            <span class="text text-danger" *ngIf="frst.untouched && frst.invalid"> *</span>
+            <input type="text" ngModel #frst="ngModel"  required class="form-control"  name="frst" placeholder="First name" autocomplete="of">
+            <span class="text text-danger" *ngIf="frst.touched && frst.invalid"> firstName requried </span>
+            <span class="text text-success" *ngIf="frst.valid"> sucess....!</span>
+            
+             
+            
+
+            </div>
+          </div>
+    
+          <div>
+            <label for="firstName">last name</label>
+            <span class="text text-danger" *ngIf="lst.untouched && lst.invalid"> *</span>
+            <input type="text" ngModel #lst="ngModel"  required class="form-control"  name="lst" placeholder="lastname"autocomplete="of">
+            <span class="text text-danger" *ngIf="lst.touched && lst.invalid"> lastname id Requried </span>
+            <span class="text text-success" *ngIf="lst.valid"> sucess....!</span>
+            
+             
+            </div>
+          
+    
+          <div>
+            <label for="username">Username</label>
+
+             
+              <span class="text text-danger" *ngIf="usr.untouched && usr.invalid"> *</span>
+              <input type="text" ngModel #usr="ngModel"  required class="form-control"  name="usr" placeholder="username"autocomplete="of">
+              <span class="text text-danger" *ngIf="usr.touched && usr.invalid"> username id Requried </span>
+              <span class="text text-success" *ngIf="usr.valid"> sucess....!</span>
+              
+              </div>
+           
+         
+    
+        <div class="form-row" ngModelGroup="address">
+          <div >
+            <label for="street">Street</label>
+            <span class="text text-danger" *ngIf="st.untouched && st.invalid"> *</span>
+            <input type="text" ngModel #st="ngModel"  required class="form-control"  name="st" placeholder="streetname">
+            <span class="text text-danger" *ngIf="st.touched && st.invalid"> street id Requried </span>
+            <span class="text text-success" *ngIf="st.valid"> sucess....!</span>
+          </div>
+    
+        
+          </div>
+    
+          <div>
+            <label for="suburb">City</label>
+            <span class="text text-danger" *ngIf="ct.untouched && ct.invalid"> *</span>
+            <input type="text" ngModel #ct="ngModel"  required class="form-control"  name="ct" placeholder="suburb">
+            <span class="text text-danger" *ngIf="ct.touched && ct.invalid"> city id Requried </span>
+            <span class="text text-success" *ngIf="ct.valid"> sucess....!</span>
+            </div>
+       
+        <div >
+          <label for="suburb">Zipcode</label>
+          <span class="text text-danger" *ngIf="zp.untouched && zp.invalid"> *</span>
+          <input type="number" ngModel #zp="ngModel"  required class="form-control"  name="zp" placeholder="zipcode">
+
+
+          <div   *ngIf=" zp.invalid && zp.touched" class="invalid-feedback">  
+            <div   *ngIf=" zp.errors?.['minlength']"></div>password must  be 6 character</div>  
+     
+          <span class="text text-danger" *ngIf="zp.touched && zp.invalid"> zip id Requried </span>
+          <span class="text text-success" *ngIf="zp.valid"> sucess....!</span>
+          </div>
+        
+        
+   
+    
+        <div class="form-group">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="terms" ngModel name="terms" #terms="ngModel" value="" required>
+            <label class="form-check-label" for="terms">
+              Agree to terms and conditions
+            </label>
+            <div *ngIf="terms?.touched && terms?.invalid" class="invalid-feedback">
+              You must agree before submitting.
+            </div>
+          </div>
+        </div>
+      
+     
+   
+    
+        <button class="btn btn-primary" type="submit" [disabled]="userForm.invalid">Submit</button>
+ 
+
+
+    
+    </div>  
+</form>
